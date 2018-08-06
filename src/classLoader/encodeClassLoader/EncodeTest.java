@@ -17,7 +17,9 @@ public class EncodeTest {
 //        System.out.println(classLoaderAttachment.toString());
 
 
-        checkClassAttachment();
+        //checkClassAttachment();
+        //systemLoadClass();
+        myLoadClass();
 
 
 
@@ -31,7 +33,8 @@ public class EncodeTest {
         //当启动虚拟机时，将EncodeTest这个类加载到方法区中的时候，会对这个类依赖的类进行加载，也就是会加载ClassLoaderAttachment(使用的类加载器时appclassloader,加载范围为classpath)
         //将类加载到方法区后，会进行一个验证的过程，如：魔数，版本等。如果此时ClassLoaderAttachment的class文件是乱码的话，那么验证就通不过，
         // 也就是在程序运行之前就会是虚拟机停下来了。如果把class文件按删除掉的话，就会爆出符号找不到的错误。
-        ClassLoaderAttachment classLoaderAttachment ;
+//        ClassLoaderAttachment classLoaderAttachment = new ClassLoaderAttachment();
+//        System.out.println(classLoaderAttachment.toString());
     }
 
 
@@ -44,12 +47,13 @@ public class EncodeTest {
 
     private static void myLoadClass() throws Exception{
         //在双亲委托模式下：要想让自定义的类起作用，那么就要保证，它的父类加载器找不到这个类(不是无法处理这个类，如加密的class，即使父类加载器无法处理，只要它找到了，那么自定义的类加载器就没有工作的机会)
-        //也就是说，自定的类加载器的加载范围要在父类加载器作用这外。
+        //也就是说，自定的类加载器的加载范围要在父类加载器作用这外。也就是父类加载器记载的话会爆出classNotFoundExcetption的异常的时候，让自定义的类加载器去加载。
 
         try {
             Class clazz = new DecodeClassLoader("encodedClass")
-                    .loadClass("ClassLoaderAttachment");
-            //这里要用
+                    .loadClass("classLoader.encodeClassLoader.ClassLoaderAttachment");
+            //这里要用Date(ClassAttachment的父类)，因为如果使用了ClassLoaderAttachment的话，
+            // 在EncodeTest在加载的过程中，会对这个类依赖的类也进行加载，并验证，也就出现了验证不通过的错误。
             Date attachment1 =
                     (Date) clazz.newInstance();
             System.out.println(attachment1.toString());

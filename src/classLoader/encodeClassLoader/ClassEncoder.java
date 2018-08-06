@@ -12,11 +12,11 @@ import java.io.OutputStream;
  **/
 
 
-public class MyClassLoaderEncoder {
+public class ClassEncoder {
 
     public static void main(String[] args) throws Exception{
 
-        String srcPath = "D:\\workRequire\\workspace\\ideaWorkSpace\\jvmStudy\\encodedClass\\ClassLoaderAttachment.class";
+        String srcPath = "D:\\workRequire\\workspace\\ideaWorkSpace\\jvmStudy\\out\\production\\jvmStudy\\classLoader\\encodeClassLoader\\ClassLoaderAttachment.class";
         String descPath = "encodedClass\\ClassLoaderAttachment.class";
         FileInputStream fis = new FileInputStream(srcPath);
         FileOutputStream fos = new FileOutputStream(descPath);
