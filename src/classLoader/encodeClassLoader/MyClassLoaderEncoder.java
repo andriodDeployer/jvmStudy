@@ -16,7 +16,7 @@ public class MyClassLoaderEncoder {
 
     public static void main(String[] args) throws Exception{
 
-        String srcPath = "D:\\workRequire\\ideaworkspace\\jvmStudy\\out\\production\\jvmStudy\\classLoader\\encodeClassLoader\\ClassLoaderAttachment.class";
+        String srcPath = "D:\\workRequire\\workspace\\ideaWorkSpace\\jvmStudy\\encodedClass\\ClassLoaderAttachment.class";
         String descPath = "encodedClass\\ClassLoaderAttachment.class";
         FileInputStream fis = new FileInputStream(srcPath);
         FileOutputStream fos = new FileOutputStream(descPath);

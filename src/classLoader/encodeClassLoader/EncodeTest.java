@@ -2,6 +2,8 @@ package classLoader.encodeClassLoader;/**
  * Created by Administrator on 2018-8-5 0005.
  */
 
+import java.util.Date;
+
 /**
  * user is lwb
  **/
@@ -15,25 +17,47 @@ public class EncodeTest {
 //        System.out.println(classLoaderAttachment.toString());
 
 
-        //在使用这个类之前，需要将在这个类进行加载，不过不是让jvm来控制加载，而是采用我们自定义的类加载器进行加载。
-        //但是我们自定义的类加载器也是遵循双亲委托
-//
+        checkClassAttachment();
 
-        Class<?> clazz1 = new EncodeTest().getClass().getClassLoader().loadClass("ClassLoaderAttachment");
-        clazz1.newInstance();
-        ClassLoaderAttachment attachment = new ClassLoaderAttachment();
-        System.out.println(attachment.toString());
 
-//        try {
-//            Class clazz = new DecodeClassLoader("encodedClass")
-//                    .loadClass("ClassLoaderAttachment");
-//
-//             Date attachment1 =
-//                     (Date) clazz.newInstance();
-//            System.out.println(attachment1.toString());
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+
+
+    }
+
+
+
+
+    public static void checkClassAttachment(){
+        //当启动虚拟机时，将EncodeTest这个类加载到方法区中的时候，会对这个类依赖的类进行加载，也就是会加载ClassLoaderAttachment(使用的类加载器时appclassloader,加载范围为classpath)
+        //将类加载到方法区后，会进行一个验证的过程，如：魔数，版本等。如果此时ClassLoaderAttachment的class文件是乱码的话，那么验证就通不过，
+        // 也就是在程序运行之前就会是虚拟机停下来了。如果把class文件按删除掉的话，就会爆出符号找不到的错误。
+        ClassLoaderAttachment classLoaderAttachment ;
+    }
+
+
+    private static void systemLoadClass() throws Exception {
+        //下面这段代码，是在程序运行时进行类加载，属于动态加载类。如果加载的这个类的class文件时加密的，那么也会在类加载的验证阶段出现问题，但此时抛出的问题属于运行时错误了。
+        Class<?> clazz1 = new EncodeTest().getClass().getClassLoader().loadClass("classLoader.encodeClassLoader.ClassLoaderAttachment");
+        System.out.println(clazz1.newInstance().toString());
+    }
+
+
+    private static void myLoadClass() throws Exception{
+        //在双亲委托模式下：要想让自定义的类起作用，那么就要保证，它的父类加载器找不到这个类(不是无法处理这个类，如加密的class，即使父类加载器无法处理，只要它找到了，那么自定义的类加载器就没有工作的机会)
+        //也就是说，自定的类加载器的加载范围要在父类加载器作用这外。
+
+        try {
+            Class clazz = new DecodeClassLoader("encodedClass")
+                    .loadClass("ClassLoaderAttachment");
+            //这里要用
+            Date attachment1 =
+                    (Date) clazz.newInstance();
+            System.out.println(attachment1.toString());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
     }
 }
