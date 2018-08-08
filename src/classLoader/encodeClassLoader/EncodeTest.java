@@ -30,16 +30,18 @@ public class EncodeTest {
 
 
     public static void checkClassAttachment(){
-        //当启动虚拟机时，将EncodeTest这个类加载到方法区中的时候，会对这个类依赖的类进行加载，也就是会加载ClassLoaderAttachment(使用的类加载器时appclassloader,加载范围为classpath)
-        //将类加载到方法区后，会进行一个验证的过程，如：魔数，版本等。如果此时ClassLoaderAttachment的class文件是乱码的话，那么验证就通不过，
-        // 也就是在程序运行之前就会是虚拟机停下来了。如果把class文件按删除掉的话，就会爆出符号找不到的错误。
-//        ClassLoaderAttachment classLoaderAttachment = new ClassLoaderAttachment();
-//        System.out.println(classLoaderAttachment.toString());
+        //此时如果classLoaderAttachmet的class时乱码的话，会出现编译错误(在进行编译时，如果编译器不进行编译的话，就不会发现这个错误)，在编译的语义解析阶段会发现。
+        //如果编译期没有发现这个错误的话，那么只能等加载这个类时，在类的验证阶段发现问题,此时在发现问题，就不是编译期错误了
+       // ClassLoaderAttachment classLoaderAttachment = new ClassLoaderAttachment();
+       // System.out.println(classLoaderAttachment.toString());
     }
 
 
     private static void systemLoadClass() throws Exception {
         //下面这段代码，是在程序运行时进行类加载，属于动态加载类。如果加载的这个类的class文件时加密的，那么也会在类加载的验证阶段出现问题，但此时抛出的问题属于运行时错误了。
+        //当启动虚拟机时，将EncodeTest这个类加载到方法区中的时候，当执行到依赖的类时，会对依赖类进行加载，也就是会加载ClassLoaderAttachment(使用的类加载器时appclassloader,加载范围为classpath)
+        //将类加载到方法区后，会进行一个验证的过程，如：魔数，版本等。如果此时ClassLoaderAttachment的class文件是乱码的话，那么验证就通不过，
+        // 也就是在程序运行之前就会是虚拟机停下来了。如果把class文件按删除掉的话，就会爆出符号找不到的错误。
         Class<?> clazz1 = new EncodeTest().getClass().getClassLoader().loadClass("classLoader.encodeClassLoader.ClassLoaderAttachment");
         System.out.println(clazz1.newInstance().toString());
     }
