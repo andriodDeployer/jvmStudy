@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="509fb411-e656-420d-ae4f-995b9e3de220" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/exception/exceptioncache/ExceptionAsGoto.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/exception/exceptioncache/ExceptionPool.java" afterPath="$PROJECT_DIR$/src/exception/exceptioncache/ExceptionPool.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/exception/exceptioncache/ExceptionTest.java" afterPath="$PROJECT_DIR$/src/exception/exceptioncache/ExceptionTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/exception/exceptioncache/SecondTest.java" afterPath="$PROJECT_DIR$/src/exception/exceptioncache/SecondTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ExceptionPool.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ExceptionPool.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/exception/exceptioncache/ExceptionPool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+            <state relative-caret-position="176">
+              <caret line="14" column="73" selection-start-line="14" selection-start-column="73" selection-end-line="14" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -40,18 +37,18 @@
       <file leaf-file-name="ExceptionTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/exception/exceptioncache/ExceptionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+            <state relative-caret-position="155">
+              <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SecondTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SecondTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/exception/exceptioncache/SecondTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1034">
-              <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+            <state relative-caret-position="-132">
+              <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -127,8 +124,8 @@
         <option value="$PROJECT_DIR$/src/trycatch/returnException/Person.java" />
         <option value="$PROJECT_DIR$/src/trycatch/returnException/ReturnOnException.java" />
         <option value="$PROJECT_DIR$/src/exception/exceptioncache/ExceptionTest.java" />
-        <option value="$PROJECT_DIR$/src/exception/exceptioncache/ExceptionPool.java" />
         <option value="$PROJECT_DIR$/src/exception/exceptioncache/SecondTest.java" />
+        <option value="$PROJECT_DIR$/src/exception/exceptioncache/ExceptionPool.java" />
       </list>
     </option>
   </component>
@@ -826,7 +823,14 @@
       <option name="project" value="LOCAL" />
       <updated>1534913664171</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="d'd&#10;">
+      <created>1534915857923</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1534915857923</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1275,29 +1279,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/exception/exceptioncache/ExceptionPool.java">
+    <entry file="file://$PROJECT_DIR$/src/exception/exceptioncache/SecondTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-132">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/exception/exceptioncache/ExceptionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+        <state relative-caret-position="155">
+          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/exception/exceptioncache/SecondTest.java">
+    <entry file="file://$PROJECT_DIR$/src/exception/exceptioncache/ExceptionPool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1034">
-          <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="176">
+          <caret line="14" column="73" selection-start-line="14" selection-start-column="73" selection-end-line="14" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

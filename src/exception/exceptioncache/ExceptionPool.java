@@ -20,7 +20,7 @@ public class ExceptionPool {
             return oldException;
         }
         Exception exception = null;
-        exception = new Exception(exceptionName);
+        exception = new Exception(exceptionName);//创建excepton对象时，会调用exception的fillstacktrack方法，会将逐个向上遍历栈帧填充信息。直到某个栈帧处理了逐个异常为止。这些操作都是在创建异常对象时完成的。
 //        exception = new Exception(exceptionName){
 //            @Override
 //            public synchronized Throwable fillInStackTrace() {
