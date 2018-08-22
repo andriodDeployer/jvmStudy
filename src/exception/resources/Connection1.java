@@ -1,4 +1,4 @@
-package trycatch.resources;/**
+package exception.resources;/**
  * Created by DELL on 2018/8/14.
  */
 

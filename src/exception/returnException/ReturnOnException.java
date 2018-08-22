@@ -1,4 +1,4 @@
-package trycatch.returnException;/**
+package exception.returnException;/**
  * Created by DELL on 2018/8/14.
  */
 
