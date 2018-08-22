@@ -11,10 +11,12 @@ import static exception.exceptioncache.ExceptionPool.getOrCreate;
 
 public class ExceptionTest {
 
-
     public static void main(String[] args){
-       // throwException1();
+        long start = System.nanoTime();
+        throwException1();
         throwException2();
+        long end = System.nanoTime();
+        System.out.println("耗时 "+(end-start));
     }
 
     public static void throwException1(){
@@ -35,10 +37,5 @@ public class ExceptionTest {
             e.printStackTrace();
         }
     }
-
-
-
-
-
 
 }

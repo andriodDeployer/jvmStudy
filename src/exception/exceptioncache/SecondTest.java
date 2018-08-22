@@ -11,17 +11,19 @@ public class SecondTest {
 
 
     public static void test1() throws Exception {
-        try{
-        test2();
-        }catch (Exception e){
-           // throw new Exception(e);
-            try {
-                throw e.fillInStackTrace();
-            } catch (Throwable throwable) {
-                throwable.printStackTrace();
-            }
-        }
 
+//        try{
+//        test2();
+//        }catch (Exception e){
+//            try {
+//                //throw e.fillInStackTrace();
+//                throw e;
+//            } catch (Throwable throwable) {
+//                throwable.printStackTrace();
+//            }
+//        }
+
+        test2();
     }
 
 
@@ -32,11 +34,16 @@ public class SecondTest {
 
     public static void test3() throws Exception {
         System.out.println("secodeTest");
-        throw ExceptionPool.getOrCreate("exception");
-        //throw new Exception("exception");
+        Exception exception = ExceptionPool.getOrCreate("exception");
+
+//        Exception exception = new Exception("exception"){
+//            @Override
+//            public synchronized Throwable fillInStackTrace() {
+//                return this;//没有堆栈信息
+//            }
+//        };
+       // exception.printStackTrace();
+
+        throw exception;
     }
-
-
-
-
 }

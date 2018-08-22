@@ -19,7 +19,14 @@ public class ExceptionPool {
         if(oldException != null){
             return oldException;
         }
-        Exception exception = new Exception(exceptionName);
+        Exception exception = null;
+        exception = new Exception(exceptionName);
+//        exception = new Exception(exceptionName){
+//            @Override
+//            public synchronized Throwable fillInStackTrace() {
+//                return this;
+//            }
+//        };
         exceptionPool.put(exceptionName,exception);
         return exception;
     }
