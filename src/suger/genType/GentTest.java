@@ -21,7 +21,7 @@ public class GentTest<T> {
     public T getObject(){
 
         List<T> list = new ArrayList<T>();
-       // list.add(t);
+        list.add(t);
         return list.get(0);
     }
 
