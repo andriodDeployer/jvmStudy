@@ -72,7 +72,12 @@ public class New {
 
        // new New();
 
-        new New(100);
+        New new1 = new New(100);//赋值语句无非就是将值放入到局部变量new1在局部变量表指定的solt中，astore_1
+        System.out.println(System.identityHashCode(new1));
+        System.out.println(new1.hashCode());
+
+
+
     }
 
 }

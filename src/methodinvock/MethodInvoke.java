@@ -41,10 +41,14 @@ public class MethodInvoke {
 
     public static void main(String[] args){
         Father father = new Father();
-      //  Father son = new Son();
+        Father son = new Son();//可以从方法头的类型指针中找出对象的动态类型。
+       // System.out.println(son.getClass());
         father.choice(new _360());
      //   TQQ tqq = new TQQ();
      //   son.choice(tqq);
+
+
+
     }
 
 }
