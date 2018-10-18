@@ -44,12 +44,12 @@ public class New {
     上面构造器生成字节码如下：
 
     //调用父类构造器
-     0: aload_0
-     1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+     0: aload_0                            //取出第一个参数，也就是this，就是new指令产生没有初始化的那个引用。放到栈顶
+     1: invokespecial #1                  // Method java/lang/Object."<init>":()V   //调用父类的构造器(一个实例方法)
 
      //初始化字段为定义的值 :类似于类加载过程中的初始化阶段。
-     4: aload_0
-     5: bipush        10
+     4: aload_0                           //取出this，放到栈顶
+     5: bipush        10                  //初始化this中字段定义时候的值。
      7: putfield      #2                  // Field age:I
 
     //执行构造方法的逻辑
