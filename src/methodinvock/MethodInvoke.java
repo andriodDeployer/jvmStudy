@@ -13,7 +13,14 @@ public class MethodInvoke {
     static class QQ{}
 
     static class TQQ extends QQ{}
-    static class _360{}
+    static class _360{
+        private _360(){}
+        private void test(){
+            new _360();
+        }
+
+
+    }
 
 
     public static class Father {

@@ -49,6 +49,9 @@
  *
  *
  *
+ *  方法的调用有5中指令，分别代表了方法调用的5中分派规则，而对于字段的引用，如果按照方法分配规则类比的话，那么getField/putField/getStatic/putStatic就是静态分配，没有动态的概念，
+ *  只按照外观类型进行读和写。
+ *
  *
  */
 package methodinvock;
