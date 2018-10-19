@@ -24,12 +24,7 @@ public class Son extends Father {
     }
 
     public Son(){
-        //Son son = new Son();
-
-
         System.out.println("==============");
-        Father father = new Father();
-
     }
 
     public int getAge() {
@@ -44,13 +39,36 @@ public class Son extends Father {
     }
 
     public static void main(String[] args){
+        Father father = new Son();
+        Father father1 = new Son();
 
-        Son father = new Son();
+        new Thread(){
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(10000*1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }.start();
+
+        father.getAge();
+        father1.getAge();
+
+        /*Son father = new Son();
+        Son fat = new Son();
         System.out.println("==============-----=------------------===========");
         father.getAge();
 
+        try {
+            Thread.sleep(1000*1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
-        father.testSuperThis();
+
+        father.testSuperThis();*/
 
     }
 
