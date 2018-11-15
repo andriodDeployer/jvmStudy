@@ -15,7 +15,7 @@
  *
  *  https://www.zhihu.com/question/51920553
  *
- *  同时也可以使用jmap来查看jvm进程中，创建的信息。jmap -histo pid；列出了jvm进程中类创建的对象的总数，占用的内存大小等。
+ *  同时也可以使用jmap来查看jvm进程中，创建的信息。jmap -histo pid；列出了jvm进程中类创建的对象的总数，占用的内存大小等。不会创建父类对象。
  *
  */
 package bytecode;

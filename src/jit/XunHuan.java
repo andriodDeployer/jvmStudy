@@ -33,17 +33,17 @@ package jit;/**
 public class XunHuan {
 
     private int count = 10;
-    public int getCount(){
+    public int getCount(XunHuan huan){
         System.out.println("ddddd");
         return count;
     }
 
     public static void main(String[] arg){
-        XunHuan xunHuan = new XunHuan();
+        XunHuan xunHuan = new XunHuan(11);
         //
-        for(int i=0;i<xunHuan.getCount();i++){
-            System.out.println(i);
-        }
+//        for(int i=0;i<xunHuan.getCount();i++){
+//            System.out.println(i);
+//        }
 
 
         Integer[] ints = new Integer[10];//会开辟10个Integer的空间
@@ -53,6 +53,8 @@ public class XunHuan {
     }
 
 
-
-
+    public XunHuan(int count) {
+        getCount(this);//这种方式时很危险的，因为他使this逃逸出去了。
+        this.count = count;
+    }
 }

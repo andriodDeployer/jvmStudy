@@ -50,7 +50,6 @@ public class TryResouces {
 
 
     public void test(){
-
         try{
             throw new NullPointerException("dddd");
         }finally {
