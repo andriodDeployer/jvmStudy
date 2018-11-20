@@ -38,10 +38,11 @@ public class TryResouces {
         try{
             throw new IOException("try");
         }catch(Exception e){
+            e.printStackTrace();
             //执行到这里之后，说明上面的try的异常已经被处理过了，如果抛出的异常是catch。
             //throw new NullPointerException("catch");
         }finally {
-            //System.out.println("finally");
+            System.out.println("finally");
             //如果finally抛出异常的话，那么只有finally的异常被抛出去，上面的try和catch的业务异常会被覆盖掉。
             // 通常finally中资源关闭的操作，抛出的异常都是关于资源关闭通用异常，对我们进行调试基本上没有什么启示。
             //throw new NullPointerException("finally");

@@ -34,7 +34,7 @@
  *          public synchronized Throwable fillInStackTrace()：有jvm调用将堆栈信息赋值给stackTrace字段。并返回当前对象。
  *          public StackTraceElement[] getStackTrace()：获取stackTrace字段的值
  *          public void setStackTrace(StackTraceElement[] stackTrace):给stackTrace字段进行设置。
- *          public final synchronized void addSuppressed(Throwable exception)：将异常添加到suppressedExceptions中
+ *          public final synchronized void addSuppressed(Throwable exception)：将异常添加到suppressedExceptions中,通常在try-with-resource中调用这个方法。
  *          public final synchronized Throwable[] getSuppressed() ：获取suppressedExceptions。
  *
  *
